@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1015237954201",
+    "project_id": "deadline-9b7a6",
+    "storage_bucket": "deadline-9b7a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015237954201:android:2e3f5d68c1a64a70858608",
+        "android_client_info": {
+          "package_name": "com.example.deadline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeX8NvmS0xQw5qZjkpB5DygTORbtPIH_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
