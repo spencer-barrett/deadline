@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Author
 
-# Spencer Barrett
+ Spencer Barrett
 
 ## Getting Started
 
