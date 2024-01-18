@@ -4,17 +4,28 @@ A new Flutter project.
 
 ## Author
 
-# Spencer Barrett
+ Spencer Barrett
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This app is a productivity/deadline tracker app that incentivizes completing tasks.
+By having a leaderboard system that you can compete with others there is a motivator to get things done.
+This app has a database connection with Firebase Firestore with user authentication.
 
-A few resources to get you started if this is your first Flutter project:
+## Login Screen
+<img width="466" alt="image" src="https://github.com/spencer-barrett/deadline/assets/36054088/c6d7db06-77a2-429c-b1b3-b0b6bda4359f">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Dashboard
+<img width="466" alt="image" src="https://github.com/spencer-barrett/deadline/assets/36054088/1919660b-4803-4125-a59d-862ca660ef54">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Main Screen
+<img width="466" alt="image" src="https://github.com/spencer-barrett/deadline/assets/36054088/d889e6b3-6d4d-45f9-9954-1619a336d819">
+
+## Rudimentary Leaderboard
+<img width="466" alt="image" src="https://github.com/spencer-barrett/deadline/assets/36054088/287853fb-8e8d-410e-98da-c5a1dfa59d0a">
+
+## Settings
+<img width="466" alt="image" src="https://github.com/spencer-barrett/deadline/assets/36054088/7043dca0-6fa7-42fe-9109-980163297b0d">
+
+## Future plans
+Set up a store where you can redeem tokens that are earned every so often as you gain points.
