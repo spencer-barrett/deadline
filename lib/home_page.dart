@@ -417,7 +417,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Card(
             child: ListTile(
-              title: Text('Leader: ${user?.email}'),
+              title: Text('Leader: ${user?.email}       points: 12'),
             ),
           ),
         ],
@@ -431,71 +431,6 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Padding(
-            //   padding: const EdgeInsets.all(10),
-            //   child: Card(
-            //     color: const Color.fromARGB(255, 244, 244, 244),
-            //     child: Container(
-            //       alignment: Alignment.center,
-            //       // height: 600,
-            //       child: Column(
-            //         children: <Widget>[
-            //           const Padding(
-            //             padding: EdgeInsets.all(20),
-            //             child: SizedBox(
-            //               height: 50,
-            //               width: 100,
-            //               child: Card(
-            //                 color: Color.fromARGB(255, 200, 200, 200),
-            //                 child: Center(child: Text('Settings')),
-            //               ),
-            //             ),
-            //           ),
-            //           ListView(
-            //             shrinkWrap: true,
-            //             padding: const EdgeInsets.all(8),
-            //             children: <Widget>[
-            //               Padding(
-            //                 padding: const EdgeInsets.all(10),
-            //                 child: Container(
-            //                   decoration: const BoxDecoration(
-            //                       color: Colors.amberAccent,
-            //                       borderRadius:
-            //                           BorderRadius.all(Radius.circular(9.0))),
-            //                   height: 50,
-            //                   // color: Colors.amber[600],
-            //                   child: const Center(child: Text('Entry A')),
-            //                 ),
-            //               ),
-            //               Padding(
-            //                 padding: const EdgeInsets.all(10),
-            //                 child: Container(
-            //                   decoration: const BoxDecoration(
-            //                       color: Colors.blueGrey,
-            //                       borderRadius:
-            //                           BorderRadius.all(Radius.circular(9.0))),
-            //                   height: 50,
-            //                   child: const Center(child: Text('Entry B')),
-            //                 ),
-            //               ),
-            //               Padding(
-            //                 padding: const EdgeInsets.all(10),
-            //                 child: Container(
-            //                   decoration: const BoxDecoration(
-            //                       color: Colors.redAccent,
-            //                       borderRadius:
-            //                           BorderRadius.all(Radius.circular(9.0))),
-            //                   height: 50,
-            //                   child: const Center(child: Text('Entry C')),
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Card(
