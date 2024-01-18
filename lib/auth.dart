@@ -24,6 +24,7 @@ class Auth {
   }) async {
     print('reach');
     await db.collection("users").doc(uid).set({
+      'Points': 0,
       'Name': username,
       'Email': email,
     });
