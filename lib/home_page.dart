@@ -44,19 +44,22 @@ class _HomePageState extends State<HomePage> {
     await Auth().signOut();
   }
 
+//Debugging function
   Future<List> doNothing() async {
     Future<List> d = Deadline().getRecentDeadline();
     List dd = await d;
     return dd;
   }
 
+//Recieve points from Firestore
   Future<void> _getPoints() async {
-    QuerySnapshot qs = await db.collection('users').get();
-    final allData = qs.docs.map((doc) => doc.data()).toList();
+    // QuerySnapshot qs = await db.collection('users').get();
+    // final allData = qs.docs.map((doc) => doc.data()).toList();
 
-    print(user?.email);
+    // print(user?.email);
   }
 
+//Custom Home screen widget
   Widget _homeWidget() {
     return Container(
         width: double.maxFinite,
@@ -88,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(10),
               child: Card(
                 child: Center(
@@ -106,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.greenAccent,
                     child: Center(
                       child: Card(
-                        color: Color.fromARGB(255, 246, 246, 246),
+                        color: const Color.fromARGB(255, 246, 246, 246),
                         margin: const EdgeInsets.all(20),
                         child: Container(
                           alignment: Alignment.center,
@@ -193,6 +196,7 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 
+// Custom form widget for new Deadline
   Widget _form(
     String label,
     Key fk,
@@ -217,6 +221,7 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 
+//Create new deadline button
   Future<void> submitDeadline() async {
     try {
       await Deadline().createDeadline(
@@ -226,11 +231,11 @@ class _HomePageState extends State<HomePage> {
     } on FirebaseException catch (e) {
       setState(() {
         errorMessage = e.message;
-        print(errorMessage);
       });
     }
   }
 
+//Custom widget for new deadline modal
   Widget _newDeadlineWidget() {
     final ThemeData theme = Theme.of(context);
 
@@ -300,6 +305,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//Custom widget for Deadline list screen
   Widget _deadlinesWidget() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -311,7 +317,7 @@ class _HomePageState extends State<HomePage> {
             child: SizedBox(
               height: 600,
               child: Card(
-                color: Color(0xff15d281),
+                color: const Color(0xff15d281),
                 child: Center(
                   child: Card(
                     color: const Color.fromARGB(255, 7, 231, 193),
@@ -333,7 +339,8 @@ class _HomePageState extends State<HomePage> {
                                         // if (index == 2) {}
                                         return Card(
                                             child: Padding(
-                                                padding: EdgeInsets.all(15),
+                                                padding:
+                                                    const EdgeInsets.all(15),
                                                 child: CustomScrollView(
                                                     physics:
                                                         const NeverScrollableScrollPhysics(),
@@ -385,7 +392,7 @@ class _HomePageState extends State<HomePage> {
                                                                     1),
                                                             child: ElevatedButton(
                                                                 onPressed: null,
-                                                                child: const Text(
+                                                                child: Text(
                                                                     'Complete')),
                                                           ))
                                                         ])),
@@ -409,9 +416,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _storeWidget() {
+//Custom widget for leaderboard screen
+  Widget _leaderboardWidget() {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -425,6 +433,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//Custom widget for settings screen
   Widget _settingsWidget() {
     return Container(
         color: const Color.fromARGB(255, 228, 228, 228),
@@ -460,6 +469,7 @@ class _HomePageState extends State<HomePage> {
 
   int currentPageIndex = 0;
 
+// Organize custom widgets into bottom nav and screens
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -496,7 +506,7 @@ class _HomePageState extends State<HomePage> {
       body: <Widget>[
         _homeWidget(),
         _deadlinesWidget(),
-        _storeWidget(),
+        _leaderboardWidget(),
         _settingsWidget()
       ][currentPageIndex],
     );

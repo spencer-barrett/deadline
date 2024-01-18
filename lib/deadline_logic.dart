@@ -4,11 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 class Deadline {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final db = FirebaseFirestore.instance;
-  List recentList = [];
-  int size = 0;
-
   User? get currentUser => _firebaseAuth.currentUser;
 
+//Creates a new deadline
   Future<void> createDeadline({
     required String title,
     required String dueDate,
@@ -28,6 +26,7 @@ class Deadline {
     });
   }
 
+//Gets all Deadlines already created
   Future<List<List>> getDeadlines() async {
     QuerySnapshot qs = await db
         .collection('users')
@@ -36,14 +35,7 @@ class Deadline {
         .get();
     final allData = qs.docs.map((doc) => doc.data()).toList();
     List<List> tmp = [];
-    // List<List> tmpp = [];
-    // print(allData[1]);
-    // for (var key in allData) {
-    //   tmp.add(key!);
-    //   print(key);
-    // }
-    // print(allData.first);
-    // print(allData);
+
     for (int i = 0; i < allData.length; i++) {
       final contents = <String>[];
 
@@ -55,18 +47,14 @@ class Deadline {
       final splitLastBracket = values[5].toString().split('}');
       contents.add(splitLastBracket[0]);
       contents.add(splitFirstBracket[1].toString());
-      // contents.add(split[1]);
       contents.add(split[2]);
       contents.add(split[1]);
       tmp.add(contents);
     }
-    // print(tmp);
-
-    // print(tmp);
-
     return tmp;
   }
 
+// Function to delete any specific deadline
   Future<void> deleteDeadline({
     required String id,
   }) async {
@@ -78,6 +66,7 @@ class Deadline {
         .delete();
   }
 
+// Get most recent deadline
   Future<List> getRecentDeadline() async {
     Map<String, dynamic> collection;
     final contents = <String>[];
@@ -90,12 +79,7 @@ class Deadline {
         .limit(1)
         .get();
 
-    // final allData = qs.docs.map((doc) => doc.data()).toList();
-    // final data = qs.docs.toList();
-
     collection = qs.docs.first.data();
-
-    // String data = allData[0].toString();
     final split = collection.toString().split(',');
     final Map<int, String> values = {
       for (int i = 0; i < split.length; i++) i: split[i]
@@ -108,7 +92,5 @@ class Deadline {
     contents.add(splitLastBracket[0]);
 
     return contents;
-
-    // print(collection.toString());
   }
 }
