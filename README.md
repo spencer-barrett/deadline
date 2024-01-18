@@ -8,6 +8,8 @@ A new Flutter project.
 
 ## Getting Started
 
+Turn productivity into a game!
+
 This app is a productivity/deadline tracker app that incentivizes completing tasks.
 By having a leaderboard system that you can compete with others there is a motivator to get things done.
 This app has a database connection with Firebase Firestore with user authentication.
